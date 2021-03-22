@@ -8,3 +8,11 @@ Create react app in the client folder to have a front end set up
 
 Change server port / and package.json to run concurrently
 
+Now that the shell for the front an back end are created create user stories for project
+    Client Side:
+        Given I am a User, When I load the app, Then I am presented an option to login in or register.
+        Given I am a User, When I login, Then I am taken to that specific users hompage.
+        Given I am a User, When I register, Then I am taken to that specific users hompage.
+    Server Side:
+        Given I am a UI, When I make a GET API call for Login Info, Then I am given an array of Objects to populate that USER homepage.
+        Given I am a UI, When I make a POST API call for Login, Then I am able to create a new User to the Database.
