@@ -22,3 +22,4 @@ Now that the shell for the front an back end are created create user stories for
 
 Create the database by setting up the schema and models 
 
+Add middleware for user and item to the server.js file through the controllers
