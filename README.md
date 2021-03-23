@@ -19,5 +19,6 @@ Now that the shell for the front an back end are created create user stories for
         Given I am a UI, When I make a GET API call for Login Info, Then I am given an array of Objects to populate that USER homepage.
 
         Given I am a UI, When I make a POST API call for Login, Then I am able to create a new User to the Database.
-        
+
 Create the database by setting up the schema and models 
+
