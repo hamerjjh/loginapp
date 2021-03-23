@@ -25,3 +25,5 @@ Create the database by setting up the schema and models
 Add middleware for user and item to the server.js file through the controllers
 
 Add proxy for CORS and imported home component into the appjs 
+
+Create UsersController in routes folder to get User Data from DB schema 
