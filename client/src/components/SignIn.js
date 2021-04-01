@@ -22,7 +22,7 @@ class SignIn extends Component {
             passowrd: "",
 
         },
-        redirectToHomePage: false,
+        redirectToUserPage: false,
         newUserId: ""
     }
 
@@ -34,17 +34,19 @@ class SignIn extends Component {
     }
 
     handleSubmit = async (event) => {
-        event.preventDefault()
-        const res = await axios.post('/api/users', {
-            'user': this.state.newUser
-        })
-        console.log(res.data)
-        this.setState({ redirectToHomePage: true, newUserId: res.data.id})
+        // event.preventDefault()
+        // const res = await axios.post('/api/users', {
+        //     'user': this.state.newUser
+        // })
+        // console.log(res.data)
+        // this.setState({ redirectToUserPage: true, newUserId: res.data.id})
+
+        this.setState({redirectToUserPage: true})
     }
 
     render() {
-        if (this.state.redirectToHomePage) {
-            return <Redirect to={'/home'} />
+        if (this.state.redirectToUserPage) {
+            return <Redirect to={'/user'} />
         }
         return (
             <SignInFormStyles>
@@ -59,9 +61,9 @@ class SignIn extends Component {
             </div>
             <div>
             <label htmlFor="password">Password </label>
-            <input onChange={this.handleChange} name="password" type="text" value={this.state.newUser.password} />
+            <input onChange={this.handleChange} name="password" type="password" value={this.state.newUser.password} />
             </div>
-            <button> Sign In </button>
+            <button type="submit"> Sign In </button>
             </form>
 
      

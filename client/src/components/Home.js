@@ -65,6 +65,7 @@ class Home extends Component {
         </SignUpSection>
  
         </LoginContainer>
+        
 
       </div>
     );

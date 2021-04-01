@@ -24,7 +24,7 @@ class SignUp extends Component {
             passowrd: "",
 
         },
-        redirectToHomePage: false,
+        redirectToUserPage: false,
         newUserId: ""
     }
 
@@ -41,12 +41,12 @@ class SignUp extends Component {
             'user': this.state.newUser
         })
         console.log(res.data)
-        this.setState({ redirectToHomePage: true, newUserId: res.data.id})
+        this.setState({ redirectToUserPage: true, newUserId: res.data.id})
     }
 
     render() {
-        if (this.state.redirectToHomePage) {
-            return <Redirect to={'/home'} />
+        if (this.state.redirectToUserPage) {
+            return <Redirect to={'/user'} />
         }
         return (
             <SignUpFormStyles>

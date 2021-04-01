@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const UsersController = require('./routes/UsersController')
-const ItemsController = require('./routes/ItemsController')
+
 
 
 const app = express();
@@ -26,7 +26,7 @@ connection.on('error', (err) => {
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client/build/'));
 app.use('/api/users', UsersController)
-app.use('/api/users/:userId/items', ItemsController)
+
 
 
 app.get('/', (req,res) => {
