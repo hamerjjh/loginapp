@@ -11,7 +11,10 @@ const SignInFormStyles = styled.div`
         font-family: 'Cabin Condensed', sans-serif;
     }
 `
-
+const ErrorMessage = styled.div `
+    font-size: 14px;
+    color: red;
+`
 
 
 
@@ -19,10 +22,11 @@ class SignIn extends Component {
     state = {
         newUser: {
             email: "",
-            passowrd: "",
+            password: "",
 
         },
         emailError: "",
+        passwordError:"",
         redirectToUserPage: false,
         newUserId: ""
     }
@@ -37,12 +41,17 @@ class SignIn extends Component {
     validate = () => {
 
         let emailError = "";
+        let passwordError = "";
 
         if (!this.state.newUser.email.includes("@")){
             emailError = "Invalid Email";
         }
-        if (emailError){
-            this.setState({ emailError});
+
+        if (this.state.newUser.password.length < 5){
+            passwordError = "Password Must have 5 Characters"
+        }
+        if (emailError || passwordError){
+            this.setState({ emailError, passwordError});
             return false;
         }
         return true;
@@ -78,11 +87,12 @@ class SignIn extends Component {
             <div>
             <label htmlFor="email">User Email </label>
             <input onChange={this.handleChange} name="email" type="text" value={this.state.newUser.email} />
-                    <div>{this.state.emailError}</div>
+                    <ErrorMessage>{this.state.emailError}</ErrorMessage>
             </div>
             <div>
             <label htmlFor="password">Password </label>
             <input onChange={this.handleChange} name="password" type="password" value={this.state.newUser.password} />
+                <ErrorMessage>{this.state.passwordError}</ErrorMessage>
             </div>
             <button type="submit"> Sign In </button>
             </form>

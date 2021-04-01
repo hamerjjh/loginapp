@@ -37,3 +37,5 @@ User page says Welcome Users and has a log out button that redirects back to hom
 Sign Up form when completed now redirects to welcome user page
 
 Updated Sign In validation for email 
+
+Fixed Validation and color message for sign in and sign up
