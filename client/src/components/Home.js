@@ -4,6 +4,13 @@ import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 import styled from "styled-components"
 
+
+const Header = styled.div`
+  h1, h2, h3{
+    text-align: center;
+  }
+`
+
 const LoginContainer = styled.div`
     display: flex;
      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 8px 22px 0 rgba(0, 0, 0, 0.29);
@@ -50,8 +57,12 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <Header>
         <h1>Welcome to the leader in digital content management</h1>
         <h2>Please Register or Sign in Below!</h2>
+        <h3>Created By: Jonathan Hamer</h3>
+        </Header>
+
 
         <LoginContainer>
           <SignInSection>
