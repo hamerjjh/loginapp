@@ -36,12 +36,14 @@ class SignUp extends Component {
     }
 
     handleSubmit = async (event) => {
-        event.preventDefault()
-        const res = await axios.post('/api/users', {
-            'user': this.state.newUser
-        })
-        console.log(res.data)
-        this.setState({ redirectToUserPage: true, newUserId: res.data.id})
+        // event.preventDefault()
+        // const res = await axios.post('/api/users', {
+        //     'user': this.state.newUser
+        // })
+        // console.log(res.data)
+        // this.setState({ redirectToUserPage: true, newUserId: res.data.id})
+
+        this.setState({redirectToUserPage: true})
     }
 
     render() {
@@ -69,7 +71,7 @@ class SignUp extends Component {
             </div>
             <div>
             <label htmlFor="password">Password </label>
-            <input onChange={this.handleChange} name="password" type="text" value={this.state.newUser.password} />
+            <input onChange={this.handleChange} name="password" type="password" value={this.state.newUser.password} />
             </div>
             <button> Sign Up </button>
             </form>
