@@ -1,7 +1,5 @@
 # Steps in creating this project
 
- 
- Live Link: https://hamerjjh.github.io/loginapp/
 
 Create the Server.js file for the backend and install express 
     install express, dotenv, body-parser, mongoose 
