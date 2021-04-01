@@ -22,6 +22,7 @@ class SignIn extends Component {
             passowrd: "",
 
         },
+        emailError: "",
         redirectToUserPage: false,
         newUserId: ""
     }
@@ -33,15 +34,34 @@ class SignIn extends Component {
         this.setState({newUser: updateUser})
     }
 
+    validate = () => {
+
+        let emailError = "";
+
+        if (!this.state.newUser.email.includes("@")){
+            emailError = "Invalid Email";
+        }
+        if (emailError){
+            this.setState({ emailError});
+            return false;
+        }
+        return true;
+    }
+
     handleSubmit = async (event) => {
-        // event.preventDefault()
+        event.preventDefault()
         // const res = await axios.post('/api/users', {
         //     'user': this.state.newUser
         // })
         // console.log(res.data)
         // this.setState({ redirectToUserPage: true, newUserId: res.data.id})
-
-        this.setState({redirectToUserPage: true})
+        const isValid = this.validate(); 
+        if (isValid === true ){
+            this.setState({redirectToUserPage: true})
+        }
+        
+       
+       
     }
 
     render() {
@@ -58,6 +78,7 @@ class SignIn extends Component {
             <div>
             <label htmlFor="email">User Email </label>
             <input onChange={this.handleChange} name="email" type="text" value={this.state.newUser.email} />
+                    <div>{this.state.emailError}</div>
             </div>
             <div>
             <label htmlFor="password">Password </label>

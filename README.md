@@ -35,3 +35,5 @@ Sign in has password type and when button is clicked it redirects to User page
 User page says Welcome Users and has a log out button that redirects back to home page
 
 Sign Up form when completed now redirects to welcome user page
+
+Updated Sign In validation for email 
